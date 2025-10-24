@@ -8,6 +8,17 @@
     "label": "VNC Desktop",
     "onAutoForward": "openPreview"
   },
+    // Optional: mount a data directory from your workspace
+  "mounts": [
+    "source=${localWorkspaceFolder}/data,target=/home/orange/data,type=bind,consistency=cached"
+  ],
+
+  // Persist environment settings
+  "containerEnv": {
+    "VNC_COL_DEPTH": "24",
+    "VNC_RESOLUTION": "1920x1080",
+    "VNC_PW": "orange"
+  },
   "postCreateCommand": "echo 'Container ready with Orange3 environment!'",
   "postStartCommand": "/dockerstartup/vnc_startup.sh --tail-log",
   "customizations": {
