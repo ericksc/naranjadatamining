@@ -7,7 +7,7 @@
   "6901": {
     "label": "VNC Desktop",
     "onAutoForward": "openPreview"
-  },
+  }},
     // Optional: mount a data directory from your workspace
   "mounts": [
     "source=${localWorkspaceFolder}/data,target=/home/orange/data,type=bind,consistency=cached"
