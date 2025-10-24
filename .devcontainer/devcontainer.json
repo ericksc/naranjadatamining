@@ -3,6 +3,11 @@
   "image": "ericksc/orange-data-mining-miniconda:latest",
   "remoteUser": "orange",
   "forwardPorts": [6901],
+  "portsAttributes": {
+  "6901": {
+    "label": "VNC Desktop",
+    "onAutoForward": "openPreview"
+  },
   "postCreateCommand": "echo 'Container ready with Orange3 environment!'",
   "postStartCommand": "/dockerstartup/vnc_startup.sh --tail-log",
   "customizations": {
