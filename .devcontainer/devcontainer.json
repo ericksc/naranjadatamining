@@ -1,0 +1,20 @@
+{
+  "name": "Orange Data Mining DevContainer",
+  "image": "ericksc/orange-data-mining-miniconda:latest",
+  "remoteUser": "orange",
+  "forwardPorts": [6901],
+  "postCreateCommand": "echo 'Container ready with Orange3 environment!'",
+  "postStartCommand": "/dockerstartup/vnc_startup.sh --tail-log",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/home/orange/.conda/envs/orange3/bin/python"
+      }
+    }
+  }
+}
