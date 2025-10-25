@@ -1,36 +1,11 @@
 {
-  "name": "Orange Data Mining DevContainer",
-  "image": "ericksc/orange-data-mining-miniconda:latest",
-  "remoteUser": "orange",
-  "forwardPorts": [6901],
-  "portsAttributes": {
-  "6901": {
-    "label": "VNC Desktop",
-    "onAutoForward": "openPreview"
-  }},
-    // Optional: mount a data directory from your workspace
-  "mounts": [
-    "source=${localWorkspaceFolder}/data,target=/home/orange/data,type=bind,consistency=cached"
-  ],
-
-  // Persist environment settings
-  "containerEnv": {
-    "VNC_COL_DEPTH": "24",
-    "VNC_RESOLUTION": "1920x1080",
-    "VNC_PW": "orange"
-  },
-  "postCreateCommand": "echo 'Container ready with Orange3 environment!'",
-  "postStartCommand": "/dockerstartup/vnc_startup.sh --tail-log",
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
         "ms-toolsai.jupyter",
         "ms-azuretools.vscode-docker"
-      ],
-      "settings": {
-        "python.defaultInterpreterPath": "/home/orange/.conda/envs/orange3/bin/python"
-      }
+      ]
     }
   }
 }
